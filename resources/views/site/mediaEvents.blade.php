@@ -432,6 +432,29 @@
                             </div>
                         </div>
                     </div>
+                                        <!--News Block-->
+                    <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="image-box" style="height: 270px;">
+                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7023186083735605248" target="_blank">
+                                    <img style="height: 270px;" src="{{ asset('siteassets/images/media/media_17.jpg') }}" alt="" title=""></a>
+                            </div>
+                            <div class="lower-box" style="padding: 35px 35px 85px;">
+                                <p>
+                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7023186083735605248" target="_blank">
+                                        Inauguration of DESCO's Supervisory Control and Data Acquisition (SCADA) system !
+                                    </a>
+                                </p>
+                                <p>January 22, 2023</p>
+                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7023186083735605248" target="_blank">
+                                    <button class="btn btn-danger btn-sm">Learn More...</button>
+                                </a>
+                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div> --}}
 
 

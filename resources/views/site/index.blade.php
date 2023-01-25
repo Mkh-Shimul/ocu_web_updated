@@ -850,6 +850,34 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Slide Item -->
+                    <div class="slide-item">
+                        <div class="news-block col-lg-12 col-md-6 col-sm-12">
+                            <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <div class="image-box">
+                                    <img src="{{ asset('siteassets/images/media/media_17.jpg') }}" alt="" title="" style="height: 270px;">
+                                </div>
+                                <div class="lower-box" style="padding: 35px 35px 55px !important;">
+                                    <p>Inauguration of DESCO's Supervisory Control and Data Acquisition (SCADA) system</p>
+                                    <div class="meta-info">
+                                        <ul class="clearfix">
+                                            <li>January 22, 2023</li>
+                                        </ul>
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7023186083735605248" target="_blank">
+                                            <button class="btn btn-danger btn-sm">Learn More...</button>
+                                        </a>
+                                    </div>
+                                    {{-- <div class="more-link">
+
+                                    </div> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div><!--End Carousel Box-->
 
