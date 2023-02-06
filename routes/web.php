@@ -93,6 +93,10 @@ Route::prefix('admin')->group(function() {
     Route::prefix('solutions')->group(function() {
         Route::get('/', [SolutionController::class, 'index'])->name('solutionIndex');
         Route::get('/create', [SolutionController::class, 'create'])->name('solutionCreate');
+        Route::post('/store', [SolutionController::class, 'store'])->name('solutionStore');
+        Route::get('/edit/{id}', [SolutionController::class, 'edit'])->name('solutionEdit');
+        Route::patch('/update/{id}', [SolutionController::class, 'update'])->name('solutionUpdate');
+        Route::delete('/delete/{id}', [SolutionController::class, 'destroy'])->name('solutionDelete');
     });
 });
 
