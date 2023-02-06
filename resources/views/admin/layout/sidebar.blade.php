@@ -79,12 +79,12 @@
 
         <ul class="menu-sub">
           <li class="menu-item">
-            <a href="#" class="menu-link">
+            <a href="{{ route('solutionIndex') }}" class="menu-link">
               <div data-i18n="Without menu">List</div>
             </a>
           </li>
           <li class="menu-item">
-            <a href="#" class="menu-link">
+            <a href="{{ route('solutionCreate') }}" class="menu-link">
               <div data-i18n="Without navbar">Create</div>
             </a>
           </li>
