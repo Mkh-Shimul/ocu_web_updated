@@ -10,7 +10,7 @@
       <div class="card mb-4">
         <h5 class="card-header">Create Solution</h5>
         <div class="card-body">
-            <form action="#" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('solutionStore') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-floating">
                     <input
@@ -19,10 +19,10 @@
                     id="floatingInput"
                     placeholder="Enter Solution Title"
                     aria-describedby="floatingInputHelp"
-                    name="title"
+                    name="name"
                     />
-                    <label for="floatingInput">Title</label>
-                    <span class="text-danger">@error('title') {{ $message }} @enderror</span>
+                    <label for="floatingInput">Name</label>
+                    <span class="text-danger">@error('name') {{ $message }} @enderror</span>
                 </div>
                 <br>
                 <div class="form-floating">
@@ -43,8 +43,10 @@
                     class="form-control"
                     placeholder="Hi, Do you have a moment to talk Joe?"
                     style="height: 170px;"
+                    name="description"
                     ></textarea>
-                    <label for="floatingInput">Paragraph</label>
+                    <label for="floatingInput">Description</label>
+                    <span class="text-danger">@error('description') {{ $message }} @enderror</span>
                 </div>
                 <br>
                 <div class="form-floating">
@@ -57,6 +59,7 @@
                     name="image"
                     />
                     <label for="floatingInput">Image</label>
+                    <span class="text-danger">@error('image') {{ $message }} @enderror</span>
                 </div>
                 <br>
                 <button type="submit" class="btn btn-primary">Save</button>
@@ -68,60 +71,32 @@
         <div class="card mb-4">
             <h5 class="card-header">Image Preview</h5>
             <div class="card-body">
-                <img src="" id="imgupload" alt="" style="height:380px; width:450px;" />
+                <img src="" id="imgupload" alt="Please Upload file" style="height:380px; width:460px;" />
             </div>
         </div>
     </div>
 </div>
 
-
-
-    <!-- Basic Layout -->
-    <div class="row">
-        <div class="col-xl">
-          <div class="card mb-4">
-            <div class="card-header d-flex justify-content-between align-items-center">
-              <h5 class="mb-0">Solution Create</h5>
-            </div>
-            <div class="card-body">
-              <form>
-                <div class="mb-3">
-                  <label class="form-label" for="basic-default-fullname">Solution Name</label>
-                  <input type="text" class="form-control" id="basic-default-fullname" placeholder="John Doe" />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label" for="basic-default-company">Short Description</label>
-                  <input type="text" class="form-control" id="basic-default-company" placeholder="ACME Inc." />
-                </div>
-                <div class="mb-3">
-                    <label for="formFile" class="form-label">Solution Image</label>
-                    <input class="form-control" type="file" id="formFile" />
-                  </div>
-                <div class="mb-3">
-                  <label class="form-label" for="basic-default-message">Message</label>
-                  <textarea
-                    id="basic-default-message"
-                    class="form-control"
-                    placeholder="Hi, Do you have a moment to talk Joe?"
-                  ></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Create</button>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl">
-          <div class="card mb-4">
-            <div class="card-header d-flex justify-content-between align-items-center">
-              <h5 class="mb-0">Image Preview</h5>
-            </div>
-            <div class="card-body">
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- / Content -->
-
 @endsection
+
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+        // $('#imgMediaDisplay').hide();
+		$('#FLEmpImage').change(function () {
+			readURL(this);
+			$('#imgMediaDisplay').show();
+		});
+    })
+    function readURL(input) {
+		if (input.files && input.files[0]) {
+			let reader = new FileReader();
+			reader.onload = function (e) {
+				$('img#imgupload').attr("src", e.target.result).width(460).height(375);
+			};
+		reader.readAsDataURL(input.files[0]);
+		}
+	}
+</script>
