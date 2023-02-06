@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\CareerOpportunityController;
+use App\Http\Controllers\SolutionController;
 use App\Http\Controllers\SiteController;
 
 /*
@@ -88,6 +89,10 @@ Route::prefix('admin')->group(function() {
         Route::get('/edit/{id}', [CareerOpportunityController::class, 'edit'])->name('careerOpEdit');
         Route::patch('/update/{id}', [CareerOpportunityController::class, 'update'])->name('careerOpUpdate');
         Route::delete('/delete/{id}', [CareerOpportunityController::class, 'destroy'])->name('careerOpDelete');
+    });
+    Route::prefix('solutions')->group(function() {
+        Route::get('/', [SolutionController::class, 'index'])->name('solutionIndex');
+        Route::get('/create', [SolutionController::class, 'create'])->name('solutionCreate');
     });
 });
 
